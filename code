@@ -1,0 +1,169 @@
+import random
+
+#Defining the list of students
+ninput = input("Put your list of 20 students with commas separating them: ")
+totalstudents = [name.strip() for name in ninput.split(",")]
+
+#Defining the possible groups
+group1 = [] 
+group2 = [] 
+group3 = []
+group4 = []
+group5 = []
+group6 = []
+group7 = []
+group8 = []
+group9 = []
+group10 = []
+
+#Used to make sure there's no missing of groups
+groupnumber = 1
+place = 0
+
+print(totalstudents)
+print("List of Students")
+print(" ")
+print("Are there any exemptions (Y for Yes, any thing else for No)")
+exemp = input()
+if (exemp.upper()) == "Y":
+    print("Put the name of the first exemption (Capitalize the letters as they were put in on the list)")
+    ex1 = input()
+    while True:
+        if ex1 in totalstudents:
+            group1.append(ex1)
+            totalstudents.remove(ex1)
+            groupnumber = groupnumber + 1
+            break
+        else:
+            print("Please put a valid input")
+            ex1a = input()
+    print("Put the name of the second exemption")
+    ex2 = input()
+    while True:
+        if ex2 in totalstudents:
+            group2.append(ex2)
+            totalstudents.remove(ex2)
+            groupnumber = groupnumber + 1
+            break
+        else:
+            print("Please put a valid input")
+            ex2 = input()
+
+
+#Telling user how to choose group sizes
+print("Press '1' for groups of two, '2' for groups of 3 and 4 and, '3' for groups of 4")
+select = input()
+
+#Making sure inputs are either 1, 2 or 3
+while True:
+    if select == "1":
+        break
+    elif select == "2":
+        break
+    elif select == "3":
+        break
+    else:
+        print("Please put a valid input")
+        select = input()
+
+#Used if User selects groups of 2
+if select == "1":
+    #Assigning all students to groups
+    while len(totalstudents) > 0:
+        randomPick = random.choice(totalstudents)
+        if groupnumber == 1:
+            group1.append(randomPick)
+        if groupnumber == 2:
+            group2.append(randomPick)
+        if groupnumber == 3:
+            group3.append(randomPick)
+        if groupnumber == 4:
+            group4.append(randomPick)
+        if groupnumber == 5:
+            group5.append(randomPick)
+        if groupnumber == 6:
+            group6.append(randomPick)
+        if groupnumber == 7:
+            group7.append(randomPick)
+        if groupnumber == 8:
+            group8.append(randomPick)
+        if groupnumber == 9:
+            group9.append(randomPick)
+        if groupnumber == 10:
+            group10.append(randomPick)
+        totalstudents.remove(randomPick)
+        groupnumber = groupnumber + 1
+        if groupnumber == 11:
+            groupnumber = 1
+
+    #Displaying groups
+    print(" ")
+    print("Group 1: ", group1)
+    print("Group 2: ", group2)
+    print("Group 3: ", group3)
+    print("Group 4: ", group4)
+    print("Group 5: ", group5)
+    print("Group 6: ", group6)
+    print("Group 7: ", group7)
+    print("Group 8: ", group8)
+    print("Group 9: ", group9)
+    print("Group 10:", group10)
+    
+#Used if User selects groups of 3 or 4
+elif select == "2":
+    #Assigning all students to groups
+    while len(totalstudents) > 0:
+        randomPick = random.choice(totalstudents)
+        if groupnumber == 1:
+            group1.append(randomPick)
+        if groupnumber == 2:
+            group2.append(randomPick)
+        if groupnumber == 3:
+            group3.append(randomPick)
+        if groupnumber == 4:
+            group4.append(randomPick)
+        if groupnumber == 5:
+            group5.append(randomPick)
+        if groupnumber == 6:
+            group6.append(randomPick)
+        totalstudents.remove(randomPick)
+        groupnumber = groupnumber + 1
+        if groupnumber == 7:
+            groupnumber = 1
+
+    #Displaying groups
+    print(" ")
+    print("Group 1: ", group1)
+    print("Group 2: ", group2)
+    print("Group 3: ", group3)
+    print("Group 4: ", group4)
+    print("Group 5: ", group5)
+    print("Group 6: ", group6)
+    
+#Used if User selects groups of 4
+elif select == "3":
+    #Assigning all students to groups
+    while len(totalstudents) > 0:
+        randomPick = random.choice(totalstudents)
+        if groupnumber == 1:
+            group1.append(randomPick)
+        if groupnumber == 2:
+            group2.append(randomPick)
+        if groupnumber == 3:
+            group3.append(randomPick)
+        if groupnumber == 4:
+            group4.append(randomPick)
+        if groupnumber == 5:
+            group5.append(randomPick)
+        totalstudents.remove(randomPick)
+        groupnumber = groupnumber + 1
+        if groupnumber == 6:
+            groupnumber = 1
+
+    #Displaying groups
+    print(" ")
+    print("Group 1: ", group1)
+    print("Group 2: ", group2)
+    print("Group 3: ", group3)
+    print("Group 4: ", group4)
+    print("Group 5: ", group5)
