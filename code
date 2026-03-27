@@ -49,7 +49,8 @@ if (exemp.upper()) == "Y":
             print("Please put a valid input")
             ex2 = input()
 
-
+else:
+    print(" ")
 #Telling user how to choose group sizes
 print("Press '1' for groups of two, '2' for groups of 3 and 4 and, '3' for groups of 4")
 select = input()
